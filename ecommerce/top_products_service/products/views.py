@@ -23,10 +23,21 @@ def get_top_products(request, companyname, categoryname):
         'products': data
     })
 
-def get_product_details(request, categoryname, productid):
-    # Mockup API call to fetch specific product details
-    api_url = f"http://20.244.56.144/{categoryname}/products/{productid}"
-    response = requests.get(api_url)
-    product_details = response.json()
-    
-    return JsonResponse(product_details)
+
+
+
+# def get_product_details(request, categoryname, productid):
+#     api_url = f"http://20.244.56.144/{categoryname}/products/{productid}"
+#     try:
+#         response = requests.get(api_url)
+#         response.raise_for_status()  # Raise exception for HTTP errors
+#         product_details = response.json()
+#         return JsonResponse(product_details)
+#     except requests.exceptions.RequestException as e:
+#         # Handle request exceptions such as connection errors, timeouts, etc.
+#         error_message = {"error": f"Failed to fetch data from external API: {str(e)}"}
+#         return JsonResponse(error_message, status=500)  # Internal Server Error
+#     except ValueError as e:
+#         # Handle JSON decoding errors
+#         error_message = {"error": f"Failed to decode JSON response: {str(e)}"}
+#         return JsonResponse(error_message, status=500)  # Internal Server Error
