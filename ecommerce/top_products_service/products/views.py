@@ -18,7 +18,7 @@ def get_cached_token():
 
 def refresh_token():
     
-    response = requests.post('http://20.244.56.144/authenticate', data={'client_id': 'your_client_id', 'client_secret': 'your_secret'})
+    response = requests.post('http://20.244.56.144/test/auth', data={'client_id': 'your_client_id', 'client_secret': 'your_secret'})
     data = response.json()
     print("API response:", data)  
 
